@@ -5,8 +5,7 @@
 }
 
 * {
-    box-sizing: border-box;
-    
+    box-sizing: border-box; /*Borda/padding fara parte do tamanho da div*/
 }
 
 body{
@@ -15,7 +14,128 @@ body{
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    min-width: 100vh;
+    min-height: 100vh;
     margin: 0;
     font-family: 'Lato', sans-serif;
 }
+
+.container{
+    margin-top: 30px auto;
+    width: 350px;
+}
+
+h1{
+    letter-spacing: 1px;  /*adicina espaço entre as letras */
+    color: #2e75cc;
+    margin: 0;
+   
+}
+
+h3{
+    border-bottom: 1px solid #bbb;
+    padding-bottom: 10px;
+    margin: 40px 0 10px;
+}
+
+h4{
+    margin: 0;
+    text-decoration: uppercase;
+}
+
+.inc-exp-container{
+    background-color: #fff;
+    box-shadow: var(--box-shadow);
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+}
+
+.inc-exp-container > div{
+    flex: 1;
+    text-align: center;
+}
+
+.inc-exp-container > div:first-of-type { /*adicionar a bordar do lado direito da segunda div*/
+    border-right: 1px solid #dedede;
+}
+
+.money{                  
+    font-size: 20px;
+    letter-spacing: 1px;
+    margin: 5px 0;
+}
+
+.money.plus{
+    color: #2ecc71;
+}
+
+.money.minus{
+    color: #c0392b;
+}
+
+label{
+    display: inline-block;
+    margin: 10px 0;
+}
+
+input[type='text'],
+input[type='number']{
+    border: 1px solid #dedede;
+    border-radius: 2px;
+    display: block;
+    font-size: 16px;
+    padding: 10px;
+    width: 100%;
+}   
+
+.btn{
+    cursor: pointer;
+    background-color: #9c88ff;
+    box-shadow: var(--box-shadow);
+    color: #fff;
+    border: 0;
+    font-size: 16px;
+    margin: 10px 0 30px;
+    padding: 10px;
+    width: 100%;
+}
+
+.btn:focus,
+.delete-btn:focus{
+    outline: 0;
+}
+
+.transactions{
+    
+}
+
+.transactions li{
+
+}
+
+.transactions li.plus{
+
+}
+
+.transactions li.minus{
+
+}
+
+.delete-btn{
+    
+}
+
+.transactions li:hover .delete-btn{
+    
+}
+
+
+
+
+
+
+
+
+
+
