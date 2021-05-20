@@ -1,4 +1,7 @@
 const transactionUl = document.querySelector('#transactions')
+const incomeDisplay = document.querySelector('#money-plus')
+const expenseDisplay = document.querySelector('#money-minus')
+const balanceDisplay = document.querySelector('#balance')
 
 const dumyTransaction = [
     { id: 1, name: 'Bolo de brigadeiro', amount: -20 },
@@ -21,13 +24,31 @@ const addTransactionIntDOM = transaction => {
 }
 
 const updatebalanceValues = () => {
-    const transactionAmounts = dumyTransaction.map(transaction => transaction.amount)
-    const total = transactionAmounts.reduce((accumulator, transaction) => accumulater + transaction, 0)
-    console.log(total)
+    const transactionsAmounts = dumyTransaction
+        .map(transaction => transaction.amount)
+
+    const total = transactionsAmounts
+        .reduce((accumulator, transaction) => accumulator + transaction, 0)
+        .toFixed(2)
+    const income = transactionsAmounts
+        .filter(value => value > 0)
+        .reduce((accumulator, value) => accumulator + value, 0)
+        .toFixed(2)
+    const expense = transactionsAmounts
+        .filter(value => value < 0)
+        .reduce((accumulator, value) => accumulator + value, 0)
+        .toFixed(2)
+
+    balanceDisplay.textContent = `R$ ${total}`
+    incomeDisplay.textContent = `R$ ${income}`
+    expenseDisplay.textContent = `R$ ${expense}`
+
+
 }
 
 const init = () => {
     dumyTransaction.forEach(addTransactionIntDOM)
+    updatebalanceValues()
 }
 
 init()
